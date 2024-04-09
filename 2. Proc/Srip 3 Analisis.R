@@ -19,7 +19,7 @@ dim(proc_data) # Dimensiones
 
 # Paso 3: Descripcion de Variables # ----
 
-##  3.1 Tabla descriptiva de variables para seccion metodologica ##
+##  3.1 Tabla descriptiva de variables para seccion metodologica ## ----
 
 ### a. Tabla descriptiva con "stargazer"  ###
 stargazer(proc_data,type = "text")
@@ -42,7 +42,7 @@ proc_data <-na.omit(proc_data)
 dim(proc_data)
 proc_data <-sjlabelled::copy_labels(proc_data,proc_data_original)
 
-## 3.2 Visualizacion de Variables ##
+## 3.2 Visualizacion de Variables ## ----
 ggplot()
 ggplot(proc_data, aes(x = conf_inst))
 proc_data %>% ggplot(aes(x = conf_inst)) + 
@@ -68,7 +68,7 @@ graph1
 
 ggsave(graph1, file="3. Output/graph1.png")
 
-## 3.3 Exploracion de asociación entre variable ##
+## 3.3 Exploracion de asociación entre variable ## ----
 
 ### Tablas de contingencias para variables categoricas ###
 sjt.xtab(proc_data$educacion, proc_data$sexo)
